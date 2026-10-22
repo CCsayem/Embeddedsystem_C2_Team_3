@@ -1,7 +1,14 @@
+
+//This one is not final code for task 2 , only tested version 
+
+
+
+
 // Car traffic lights
 int greenLED = 11;
 int yellowLED = 12;
 int redLED = 13;
+
 
 // Pedestrian traffic lights
 int pedGreenLED = 9;
