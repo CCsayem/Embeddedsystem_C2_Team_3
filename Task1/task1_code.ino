@@ -1,7 +1,11 @@
+const int greenLED  = 11;
+const int yellowLED = 12;
+const int redLED    = 13;
 
-int greenLED = 11;
-int yellowLED = 12;
-int redLED = 13;
+const unsigned long GREEN_TIME        = 10000;  // 10 s
+const unsigned long YELLOW_AFTER_GREEN = 5000;  // 5 s
+const unsigned long RED_TIME          = 10000;  // 10 s
+const unsigned long YELLOW_AFTER_RED  = 5000;   // 5 s
 
 int state = 1;  // 1 = Green, 2 = Yellow, 3 = Red, 4 = Yellow
 
@@ -11,6 +15,7 @@ void setup() {
   pinMode(greenLED, OUTPUT);
   pinMode(yellowLED, OUTPUT);
   pinMode(redLED, OUTPUT);
+  startTime = millis();
 }
 
 void loop() {
@@ -22,7 +27,7 @@ void loop() {
       digitalWrite(yellowLED, LOW);
       digitalWrite(redLED, LOW);
 
-      if (millis() - startTime >= 4000) {
+      if (millis() - startTime >= GREEN_TIME) {
         state = 2;
         startTime = millis();
       }
@@ -33,7 +38,7 @@ void loop() {
       digitalWrite(yellowLED, HIGH);
       digitalWrite(redLED, LOW);
 
-      if (millis() - startTime >= 2000) {
+      if (millis() - startTime >= YELLOW_AFTER_GREEN) {
         state = 3;
         startTime = millis();
       }
@@ -44,7 +49,7 @@ void loop() {
       digitalWrite(yellowLED, LOW);
       digitalWrite(redLED, HIGH);
 
-      if (millis() - startTime >= 4000) {
+      if (millis() - startTime >= RED_TIME) {
         state = 4;
         startTime = millis();
       }
@@ -55,7 +60,7 @@ void loop() {
       digitalWrite(yellowLED, HIGH);
       digitalWrite(redLED, LOW);
 
-      if (millis() - startTime >= 1000) {
+      if (millis() - startTime >= YELLOW_AFTER_RED) {
         state = 1;
         startTime = millis();
       }
