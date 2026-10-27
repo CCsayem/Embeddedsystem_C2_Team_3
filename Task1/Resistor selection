@@ -1,9 +1,0 @@
-**Resistor selection**
-
-We selected a 330 Ω series resistor for each LED to limit the current and protect both the LED and the Arduino output pin.
-
-Assuming a 5 V Arduino output, a red LED forward voltage of 2 V, and a resistor of 330 Ω:
-
-Current = (5 V − 2 V) / 330 Ω ≈ 9.1 mA.
-
-This current is suitable for a typical indicator LED and helps keep the circuit within safe operating limits. The exact current depends on the LED's forward voltage.
