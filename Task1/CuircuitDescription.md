@@ -4,11 +4,22 @@ This circuit shows the car traffic light part of the project, built on a small b
 
 Components in the diagram
 
+
 1 Arduino Uno R3
+
+
 1 breadboard (small)
+
+
 3 LEDs: red, yellow, green
-3 resistors (330 Ω), one per LED
+
+
+3 resistors (330 kΩ), one per LED
+
+
 4 jumper wires: red, yellow, green, black
+
+
 
 Wiring
 
